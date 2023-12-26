@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+#main{
+  width: 35vw;
+  max-height: 100vh;
+}
+#input{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    animation: appear 2s;
+}
+#label{
+    font-size: 4vw;
+    font-weight: bold;
+    color: black;
+}
+#size{
+    text-align: center;
+    height: 3vw;
+    min-height: 30px;
+    font-size: 20px;
+    width: 7vw;
+    min-width: 50px;
+    margin: 10px;
+}
+#warning{
+    font-size: 80%;
+}
+#submit{
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 2vw;
+    font-weight: 600;
+    line-height: normal;
+    margin: 15px auto 5px;
+    min-width: fit-content;
+    outline: none;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 10vw;
+    will-change: transform;
+}
+
+#submit:disabled {
+    pointer-events: none;
+}
+
+#submit:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+#submit:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+#content{
+    display: none;
+}
+#total{
+    display: block;
+    width: 20vw;
+    margin: 20px auto;
+    border-bottom: grey solid 3px;
+}
+#total *{
+    color: black;
+}
+#container {
+  padding: 5px;
+  transition: 1s;
+  background-color: aquamarine;
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 3vw auto;
+  max-width: 1000px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+.container{
+    animation: appear 2s;
+
+}
+@keyframes appear {
+  from {opacity: 0.2}
+  to {opacity: 1}
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: fit-content;
+}
+.cell{
+  position: relative;
+  aspect-ratio: 1/1;
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+
+.modalClosed{
+    display: none;
+}
+.modalOpen{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Transparent gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: open 1s;
+}
+@keyframes open {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#winModal{
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#info{
+  text-align: center;
+  margin: 20px;
+  font-size: 5vw;
+  font-weight: bold;
+  color: white;
+}
+
+.score{
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+  color: white;
+}
+.scoreSpan{
+  font-size: 2.5vw;
+  vertical-align: middle;
+}
+
+#retryBtn {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 2vw;
+    font-weight: 600;
+    line-height: normal;
+    margin: 15px auto 5px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 20vw;
+    will-change: transform;
+}
+
+#retryBtn:disabled {
+    pointer-events: none;
+}
+
+#retryBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+#retryBtn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+#subBtn{
+    font-size: 1.3vw;
+    color: white;
+    text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  #main{
+      width: 70vw;
+  }
+  #total{
+      width: 40vw;
+  }
+  #total .score{
+      font-size: 7vw;
+  }
+  #totalScore{
+      font-size: 4vw;
+  }
+}
+
+/*===============================*/
+

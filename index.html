@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+<div id="main">
+
+  <!--Size Input Window-->
+  <div id="input">
+    <form id="sizeForm">
+      <label id="label" for="size"> Enter Field Size</label><br>
+      <input id="size" type="number" name="size" value="3" min="3" max="10">
+      <p id="warning">The number must be <u><b>Natural</b></u>, <u><b>greater than 3 and less than 10</b></u>.</p>
+      <input id="submit" type="submit" value="Go">
+    </form>
+  </div>
+
+
+  <div id="content">
+    <!--  Total Score  -->
+    <div id="total">
+      <p class="score">X <span id="totalScore" class="scoreSpan">0 - 0</span> O</p>
+    </div>
+
+    <!--  Game Field  -->
+    <div id="container"></div>
+  </div>
+  <!--  Retry Modal Window  -->
+  <div id="modal" class="modalClosed">
+    <div id="winModal">
+      <p id="info"></p>
+      <p id="score" class="score">X <span id="scoreSpan" class="scoreSpan"></span> O</p>
+      <button id="retryBtn">Try Again</button>
+      <p id="subBtn">Press any key</p>
+    </div>
+  </div>
+</div>
+
+<script defer src="app.js"></script>
+</body>
+</html>
